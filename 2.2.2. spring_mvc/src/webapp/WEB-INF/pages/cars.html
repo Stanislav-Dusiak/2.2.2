@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Loop</title>
+  <style>
+    table th, table td {padding: 5px;}
+  </style>
+</head>
+
+<body>
+<h1>th:each</h1>
+
+<table border="1">
+  <tr>
+    <th>Model</th>
+    <th>Series</th>
+    <th>Fuel for engine</th>
+  </tr>
+
+  <tr th:each="car, state : ${cars}"
+      class="row" th:classappend="${state.odd} ? 'odd-row' : 'even-row'">
+
+    <td th:utext="${car.model}">Model</td>
+    <td th:utext="${car.series}">Series</td>
+    <td th:utext="${car.fuelForEngine}">Fuel for engine</td>
+
+  </tr>
+
+</table>
+
+</body>
+</html>
